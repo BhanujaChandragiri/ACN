@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        #top { text-align: center; padding: 20px; background-color: #f8f9fb; }
+        #top a { margin: 0 15px; text-decoration: none; }
+        #left { float: left; width: 20%; background-color: #4cc6ef; padding: 20px; height: 100vh; box-sizing: border-box; }
+        #left a { display: block; padding: 5px; text-decoration: none; }
+        #content { margin-left: 20%; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #77bdf6; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        img { width: 50px; height: 75px; }
+        form { text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <h1>ONLINE BOOK STORE</h1>
+        <td><img src="logo.jpg" alt="Logo"></td>
+        <a href="#" onclick="loadContent('home')">Home</a>
+        <a href="#" onclick="loadContent('login')">Login</a>
+        <a href="#" onclick="loadContent('registration')">Registration</a>
+        <a href="#" onclick="loadContent('catalogue')">Catalogue</a>
+        <a href="#" onclick="loadContent('cart')">Cart</a>
+    </div>
+    <div id="left">
+        <a href="#" onclick="loadContent('cse')">CSE</a>
+        <a href="#" onclick="loadContent('ece')">ECE</a>
+        <a href="#" onclick="loadContent('eee')">EEE</a>
+        <a href="#" onclick="loadContent('civil')">CIVIL</a>
+    </div>
+    <div id="content">
+        <h2>Welcome to the Online Book Store</h2>
+        <p>Here you can find a wide variety of books across different categories.</p>
+    </div>
+
+    <script>
+        function loadContent(page) {
+            let content = '';
+
+            switch(page) {
+                case 'home':
+                    content = '<h2>Welcome to the Online Book Store</h2><p>Here you can find a wide variety of books across different categories.A book is a medium for recording information in the form of writing or images. Books are typically composed of many pages, bound together and protected by a cover. Modern bound books were preceded by many other written mediums, such as the codex, the scroll and the tablet.</p>';
+                    break;
+                case 'login':
+                    content = `
+                        <h2>Login</h2>
+                         <td><img src="logo.jpg" alt="Background"></td>
+
+                        <form>
+                            <label for="username">Login:</label>
+                            <input type="text" id="username" name="username"><br><br>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="BHANU"><br><br>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </form>
+                    `;
+                    break;
+                case 'registration':
+                    content = '<h2>Registration Page</h2><p>Registration form goes here.</p>';
+                    break;
+                case 'catalogue':
+                    content = `
+                        <h2>Catalogue</h2>
+                        <table>
+                            <tr>
+                                <th>Cover</th>
+                                <th>Author</th>
+                                <th>Publisher</th>
+                                <th>Price</th>
+                                <th>Add to Cart</th>
+                            </tr>
+                            <tr>
+                                <td><img src="xml.jpg" alt="Book Cover"></td>
+                                <td>XML Bible<br>Winston</td>
+                                <td>Wiley</td>
+                                <td>Rs 40.5</td>
+                                <td><button>Add to cart</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="ai.jpg" alt="Book Cover"></td>
+                                <td>AI<br>S. Russel</td>
+                                <td>Princeton Hall</td>
+                                <td>Rs 63</td>
+                                <td><button>Add to cart</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="java.jpg" alt="Book Cover"></td>
+                                <td>Java 2<br>Watson</td>
+                                <td>BPB Publications</td>
+                                <td>Rs 35.5</td>
+                                <td><button>Add to cart</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="html4.jpg" alt="Book Cover"></td>
+                                <td>HTML in 24 hours<br>Sam Peter</td>
+                                <td>Sam Publication</td>
+                                <td>Rs 50</td>
+                                <td><button>Add to cart</button></td>
+                            </tr>
+                        </table>
+                    `;
+                    break;
+                case 'cart':
+                    content = '<h2>Cart Page</h2><p>Cart details go here.</p>';
+                    break;
+                case 'cse':
+                    content = '<h2>CSE Books</h2><p>Catalogue for CSE books goes here.</p>';
+                    break;
+                case 'ece':
+                    content = '<h2>ECE Books</h2><p>Catalogue for ECE books goes here.</p>';
+                    break;
+                case 'eee':
+                    content = '<h2>EEE Books</h2><p>Catalogue for EEE books goes here.</p>';
+                    break;
+                case 'civil':
+                    content = '<h2>CIVIL Books</h2><p>Catalogue for CIVIL books goes here.</p>';
+                    break;
+                default:
+                    content = '<h2>Welcome to the Online Book Store</h2><p>Here you can find a wide variety of books across different categories.</p>';
+            }
+
+            document.getElementById('content').innerHTML = content;
+        }
+    </script>
+</body>
+</html>
